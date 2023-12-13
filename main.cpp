@@ -1,6 +1,8 @@
 #include <iostream>
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/System.hpp>
 
 int newPlayer(){
     int players;
@@ -15,67 +17,24 @@ void telaInicial(){
     
 }
 
+#include <SFML/Graphics.hpp>
+
 int main() {
-    // Inicialização da janela
-    sf::RenderWindow app(sf::VideoMode(800, 600), "MFJ - Hello World");
-    int xCircle = 300;
-    int yCircle = 300;
+    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML App");
+    sf::CircleShape shape(50.f);
+    shape.setFillColor(sf::Color::Green);
 
-    // Loop principal
-    while (app.isOpen()) {
-        // Processa eventos
+    while (window.isOpen()) {
         sf::Event event;
-        while (app.pollEvent(event)) {
-            if (event.type == sf::Event::Closed) {
-                app.close();
-            }
-        }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-            return EXIT_SUCCESS;
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed)
+                window.close();
         }
 
-        // Simula o mundo do jogo
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) yCircle--;
-        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) yCircle++;
-        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) xCircle--;
-        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) xCircle++;
-
-        // Renderiza
-        app.clear(sf::Color(255, 255, 255));
-
-        sf::VertexArray line(sf::Lines, 2);
-        line[0].position = sf::Vector2f(10, 10);
-        line[1].position = sf::Vector2f(100, 50);
-        line[0].color = sf::Color(0, 0, 0);
-        line[1].color = sf::Color(255, 255, 0);
-
-        sf::CircleShape circle(50);
-        circle.setPosition(xCircle, yCircle);
-        circle.setFillColor(sf::Color(125, 200, 240));
-        circle.setOutlineThickness(1);
-        circle.setOutlineColor(sf::Color(0, 0, 0));
-
-        sf::RectangleShape rect(sf::Vector2f(20, 30));
-        rect.setPosition(400, 400);
-        rect.setFillColor(sf::Color(35, 200, 100));
-        rect.setOutlineThickness(1);
-        rect.setOutlineColor(sf::Color(0, 0, 0));
-
-        sf::ConvexShape polygon;
-        polygon.setPointCount(3);
-        polygon.setPoint(0, sf::Vector2f(100, 100));
-        polygon.setPoint(1, sf::Vector2f(150, 200));
-        polygon.setPoint(2, sf::Vector2f(80, 150));
-        polygon.setFillColor(sf::Color(255, 0, 0));
-        polygon.setOutlineThickness(1);
-        polygon.setOutlineColor(sf::Color(0, 128, 128));
-
-        app.draw(line);
-        app.draw(circle);
-        app.draw(rect);
-        app.draw(polygon);
-        app.display();
+        window.clear();
+        window.draw(shape);
+        window.display();
     }
 
-    return EXIT_SUCCESS;
+    return 0;
 }

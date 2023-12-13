@@ -1,13 +1,14 @@
 {
+  "version": "0.2.0",
   "configurations": [
     {
       "name": "(gdb) Iniciar",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/LIP-1_Projeto-Final.out",
+      "program": "${workspaceFolder}/build/LIP_1_Projeto_Final",
       "args": [],
       "stopAtEntry": false,
-      "cwd": "${fileDirname}",
+      "cwd": "${workspaceFolder}",
       "environment": [],
       "externalConsole": false,
       "MIMode": "gdb",
@@ -22,16 +23,18 @@
           "text": "-gdb-set disassembly-flavor intel",
           "ignoreFailures": true
         }
-      ]
+      ],
+      "preLaunchTask": "C/C++: g++-9 arquivo de build ativo",
+      "miDebuggerPath": "/usr/bin/gdb"
     },
     {
       "name": "C/C++: g++-9 Compilar e depurar o arquivo ativo",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "program": "${workspaceFolder}/build/LIP_1_Projeto_Final",
       "args": [],
       "stopAtEntry": false,
-      "cwd": "${fileDirname}",
+      "cwd": "${workspaceFolder}",
       "environment": [],
       "externalConsole": false,
       "MIMode": "gdb",
@@ -54,10 +57,10 @@
       "name": "C/C++: g++ Compilar e depurar o arquivo ativo",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "program": "${workspaceFolder}/build/LIP_1_Projeto_Final",
       "args": [],
       "stopAtEntry": false,
-      "cwd": "${fileDirname}",
+      "cwd": "${workspaceFolder}",
       "environment": [],
       "externalConsole": false,
       "MIMode": "gdb",
@@ -76,6 +79,5 @@
       "preLaunchTask": "C/C++: g++ arquivo de build ativo",
       "miDebuggerPath": "/usr/bin/gdb"
     }
-  ],
-  "version": "2.0.0"
+  ]
 }

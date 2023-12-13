@@ -1,0 +1,3 @@
+/workspaces/LIP-1_Projeto-Final/build/CMakeFiles/rebuild_cache.dir
+/workspaces/LIP-1_Projeto-Final/build/CMakeFiles/edit_cache.dir
+/workspaces/LIP-1_Projeto-Final/build/CMakeFiles/LIP_1_Projeto_Final.dir

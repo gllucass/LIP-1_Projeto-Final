@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/workspaces/LIP-1_Projeto-Final/main.cpp
+iostream
+-
+SFML/Audio.hpp
+-
+SFML/Graphics.hpp
+-
+SFML/Window.hpp
+-
+SFML/System.hpp
+-
+
